@@ -23,6 +23,25 @@ STATICFILES_DIRS = [BASE_DIR, 'static']
 MEDIA_URL = '/media/'
 MEDIA_ROOT = [BASE_DIR, 'media']
 
+# ckeditor settings
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_IMAGE_BACKEND = 'pillow'
+CKEDITOR_JQUERY_URL = 'https://ajax.googleaplis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_custom ': [
+            ['Bold','Italic','Unederline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source']
+        ],
+        'styleSet': [
+            
+        ],
+    }
+}
+
 # Mail settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
