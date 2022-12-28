@@ -4,6 +4,8 @@ from django.conf import settings
 from model_utils.models import TimeStampedModel
 from ckeditor_uploader.fields import RichTextUploadingField
 
+from .managers import EntryManager
+
 
 class Category(TimeStampedModel):
     """Categorias"""
@@ -38,12 +40,14 @@ class Entry(TimeStampedModel):
     tag = models.ManyToManyField(Tag, verbose_name='Tag')
     title = models.CharField('Titulo', max_length=200)
     resume = models.TextField('Resumen')
-    content = RichTextUploadingField('Contenido')
+    content = RichTextUploadingField('Contenido',)
     public = models.BooleanField('Publico', default=False)
-    image = models.ImageField('Imagen', upload_to='Entry')
+    image = models.ImageField('Imagen', upload_to='media',)
     portada = models.BooleanField('Portada',default=False)
     in_home = models.BooleanField(default=False)
     slug = models.SlugField('Slug',editable=False,max_length=300)
+    
+    objects = EntryManager()
     
     class Meta:
         verbose_name = 'Entrada'
