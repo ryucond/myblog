@@ -30,15 +30,15 @@ CKEDITOR_JQUERY_URL = 'https://ajax.googleaplis.com/ajax/libs/jquery/2.2.4/jquer
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'Custom',
-        'toolbar_custom ': [
+        'toolbar_Custom ': [
             ['Bold','Italic','Unederline'],
             ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
-            ['Link', 'Unlink'],
+            ['TextColor', 'Format','FontSize','Link'],
+            ['Smiley', 'Image', 'Iframe'],
             ['RemoveFormat', 'Source']
         ],
-        'styleSet': [
-            
-        ],
+        # 'styleSet': [
+        # ],
     }
 }
 
