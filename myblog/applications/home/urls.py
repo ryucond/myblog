@@ -6,5 +6,5 @@ app_name = "home_app"
 
 urlpatterns = [
     path('', views.HomePageView.as_view(), name='home'),
-    
+    path('register-suscription', views.SuscribersCreateView.as_view(), name='add-suscription')
 ]
