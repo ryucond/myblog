@@ -2,9 +2,19 @@
 {% extends "home/base_home.html" %}
 {% load  static %}
 
+{% block title %}
+    {{ home.about_title }}
+{% endblock title %}
+
+{% block description %}
+   <meta name="description" content="{{home.description}}"> 
+{% endblock description %}
+
 {% block content %}
 
 {% include "includes/header.html" %}
+
+<h1 style="font-size: 40px; color: #0277bd;">Blog de libros en general</h1>
 
 <div class="grid-container">
     <!-- primer bloque del home -->

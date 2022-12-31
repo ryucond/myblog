@@ -23,7 +23,7 @@ class HomePageView(LoginRequiredMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super(HomePageView,self).get_context_data(**kwargs)
         #cargamos mensaje home
-        context["mensaje"] = Home.objects.latest('created')
+        context["home"] = Home.objects.latest('created')
         #contexto para portada
         context["portada"] = Entry.objects.entrada_en_portada()
         #contexto para articulos home

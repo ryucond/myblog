@@ -6,5 +6,5 @@ app_name = 'entrada_app'
 
 urlpatterns = [
     path('entradas/', views.EntryListView.as_view(), name='entry-lista'),
-    path('entrada/detalle/<pk>/', views.EntryDetailView.as_view(), name='entry-detalle')
+    path('entrada/detalle/<slug>/', views.EntryDetailView.as_view(), name='entry-detalle')
 ]

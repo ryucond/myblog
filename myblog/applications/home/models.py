@@ -4,7 +4,7 @@ from model_utils.models import TimeStampedModel
 
 class Home(TimeStampedModel):
     """Modelo de la pagina principal"""
-    tittle = models.CharField('Nombres', max_length=30)
+    tittle = models.CharField('Nombre', max_length=30)
     description = models.TextField()
     about_title = models.CharField('Titulo Nosotros', max_length=50)
     about_text =  models.TextField()
