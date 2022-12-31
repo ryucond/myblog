@@ -12,7 +12,7 @@
         <div class="cell small-12 large-4">
             <div class="callout">
                 <h5>{{ user.full_name }}</h5>
-                <p>{{user}} - {{user.ocupacion}}</p>
+                <p >{{user}} - {{user.ocupacion}}</p>
                 <p>{{user.date_birth}}</p>
                 <a href="#">Editar perfil</a>                
             </div>
@@ -32,7 +32,7 @@
                             <p class="card-favoritos-body-text">{{ favorito.entry.resume }}</p>
                             <form class="card-favoritos-body-actions" method="post" action="{% url 'favoritos_app:del-fav' favorito.id %}">
                                 {% csrf_token %}
-                                <a class="button warning" href="{% url 'entrada:entry-detalle' favorito.entry.id %}">Ver</a>
+                                <a class="button warning" href="{% url 'entrada:entry-detalle' favorito.entry.slug %}">Ver</a>
                                 <button class="button alert" type="submit">Eliminar</button>
                             </form>
                         </div>

@@ -3,6 +3,7 @@ from datetime import timedelta, datetime
 from django.db import models
 from django.conf import settings
 from django.template.defaultfilters import slugify
+from django.urls import reverse_lazy
 #apps terceros
 from model_utils.models import TimeStampedModel
 from ckeditor_uploader.fields import RichTextUploadingField
@@ -56,9 +57,17 @@ class Entry(TimeStampedModel):
         verbose_name = 'Entrada'
         verbose_name_plural = 'Entradas'
         
-        
+            
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        return reverse_lazy(
+            'entrada_app:entry-detalle',
+            kwargs = {
+                'slug': self.slug
+            }
+        )
     
     def save(self, *args, **kwargs):
         # calculo total segundos hora actual
