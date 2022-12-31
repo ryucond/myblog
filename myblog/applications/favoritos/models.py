@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 from applications.entrada.models import Entry
+from .managers import FavoritesManager
 #apps terceros
 from model_utils.models import TimeStampedModel
 
@@ -9,6 +10,8 @@ class Favorites(TimeStampedModel):
     
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='user_favorites', on_delete=models.CASCADE)
     entry = models.ForeignKey(Entry, related_name='entry_favorites', on_delete=models.CASCADE)
+    
+    objects = FavoritesManager()
     
     class Meta:
         unique_together = ('user', 'entry')

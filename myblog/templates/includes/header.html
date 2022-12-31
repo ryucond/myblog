@@ -1,7 +1,7 @@
 <header>
     <div class="grid-x grid-margin-x header">
         <div class="cell small-12 medium-4 large-3">
-            <a href="#" style="font-size: 20px; color: #0277bd;">
+            <a href="{% url 'favorite:perfil' %}" style="font-size: 20px; color: #0277bd;">
                 Varela's Blog
             </a>
         </div>
@@ -11,13 +11,30 @@
         <div class="cell small-12 large-5">
             <ul class="menu" style="justify-content: flex-end;">
                 <li>
-                    <a href="#">Home</a>
+                    <a href="{% url 'home_app:home' %}">Home</a>
                 </li>
                 <li>
-                    <a href="#">Blog</a>
+                    <a href="{% url 'entrada_app:entry-lista' %}">Blog</a>
                 </li>
                 <li>
-                    <a class="success button">Acceder</a>
+                    
+                    {% if not user.is_anonymous %}
+                        <a href="{% url 'users_app:logout-user' %}">Logout</a>
+                    {% else %}
+                        
+                    {% endif %}
+                        
+                    
+                </li>
+
+                <li>
+                    
+                    {% if not user.is_anonymous %}
+                        <a class="success button" href="{% url 'users_app:logout-user' %}">{{user}}</a>
+                    {% else %}
+                        <a class="warning button" href="{% url 'users_app:login-user' %}">{{user}}</a>
+                    {% endif %}
+                        
                 </li>
                 
             </ul>

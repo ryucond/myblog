@@ -9,7 +9,7 @@ from django.views.generic import (
 )
 
 from .models import Home, Suscribers
-from .forms import SuscribersForm
+from .forms import SuscribersForm, ContactForm
 from applications.entrada.models import Entry
 
 class TestPlantilla(TemplateView):
@@ -37,6 +37,11 @@ class HomePageView(LoginRequiredMixin, TemplateView):
     
 class SuscribersCreateView(CreateView):
     form_class = SuscribersForm
+    success_url = '.'
+    
+
+class ContactCreateView(CreateView):
+    form_class = ContactForm
     success_url = '.'
     
 

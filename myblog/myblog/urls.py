@@ -8,7 +8,7 @@ urlpatterns = [
     path('', include('applications.users.urls', namespace='users')),
     path('', include('applications.home.urls', namespace='home')),
     path('', include('applications.entrada.urls', namespace='entrada')),
-    #path('', include('applications.favoritos.urls', namespace='favoritos')),
+    path('', include('applications.favoritos.urls', namespace='favorite')),
     # urls para ckeditor
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls'))
 ]  + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
